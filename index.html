@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilam Tours & Travels | Your Gateway to Eastern Himalayas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .lightbox-active { display: flex !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <nav class="bg-emerald-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Brand & Logo -->
+            <div class="flex items-center gap-3">
+                <svg class="w-10 h-10 text-emerald-400" viewBox="0 0 100 100" fill="currentColor">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="6"/>
+                    <path d="M 20 70 L 40 40 L 55 60 L 70 30 L 85 70 Z" fill="currentColor"/>
+                    <circle cx="75" cy="25" r="6" fill="#f59e0b"/>
+                </svg>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">NILAM TOURS & TRAVELS</h1>
+                    <p class="text-xs text-emerald-200">Your Gateway to Eastern Himalayas</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#home" class="hover:text-emerald-400 transition" id="nav-home">Home</a>
+                <a href="#festive" class="hover:text-emerald-400 transition" id="nav-festive">Festive Packages</a>
+                <a href="#packages" class="hover:text-emerald-400 transition" id="nav-packages">Tours</a>
+                <a href="#calculator" class="hover:text-emerald-400 transition" id="nav-calc">Price Calculator</a>
+                <a href="#fleet" class="hover:text-emerald-400 transition" id="nav-fleet">Car Fleet</a>
+                <a href="#weather" class="hover:text-emerald-400 transition" id="nav-weather">Weather</a>
+                <a href="#reviews" class="hover:text-emerald-400 transition" id="nav-reviews">Reviews</a>
+            </div>
+
+            <!-- Controls & Language Selector -->
+            <div class="flex items-center gap-3">
+                <select id="langSwitcher" onchange="changeLanguage(this.value)" class="bg-emerald-800 text-xs px-2 py-1.5 rounded border border-emerald-700 focus:outline-none">
+                    <option value="en">English (EN)</option>
+                    <option value="bn">বাংলা (BN)</option>
+                    <option value="hi">हिन्दी (HI)</option>
+                </select>
+                <button onclick="openAdminModal()" class="bg-amber-500 hover:bg-amber-600 text-slate-900 text-xs font-semibold px-3 py-1.5 rounded transition">
+                    <i class="fa-solid fa-lock mr-1"></i> Admin
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg min-h-[80vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs uppercase px-3 py-1 rounded-full tracking-wider font-semibold">Alipurduar, West Bengal</span>
+            <h2 class="text-4xl md:text-6xl font-extrabold my-4 leading-tight" id="hero-title">Explore Sikkim, Darjeeling & Dooars</h2>
+            <p class="text-lg md:text-xl text-slate-200 mb-8" id="hero-subtitle">Customized tour packages, luxury & budget car rentals, local hill permits, and memorable mountain journeys.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#calculator" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition" id="hero-btn-calc">Calculate Tour Fare</a>
+                <a href="https://wa.me/919547171871" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-lg backdrop-blur transition">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> WhatsApp Inquiry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Festive & Seasonal Specials -->
+    <section id="festive" class="py-16 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900" id="festive-heading">Seasonal & Festive Special Packages</h2>
+            <p class="text-slate-600" id="festive-sub">Limited-edition holiday batches for Durga Puja, Diwali, and Summer Vacations.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Puja Special -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 hover:shadow-lg transition">
+                <div class="bg-amber-500 text-slate-900 font-bold text-xs uppercase px-3 py-1 inline-block m-3 rounded">Durga Puja Special</div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold mb-2">Grand Sikkim & Silk Route Festive Batch</h3>
+                    <p class="text-slate-600 text-sm mb-4">6 Days / 5 Nights - Gangtok, Nathula Pass, Zuluk & Rangpo.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-emerald-700 font-bold text-lg">₹14,500 / person</span>
+                        <button onclick="openItineraryModal('Sikkim Silk Route')" class="text-xs bg-slate-800 text-white px-3 py-2 rounded">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diwali Special -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 hover:shadow-lg transition">
+                <div class="bg-purple-600 text-white font-bold text-xs uppercase px-3 py-1 inline-block m-3 rounded">Diwali & Chhath Special</div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold mb-2">Darjeeling & Mirik Queen Hill Retreat</h3>
+                    <p class="text-slate-600 text-sm mb-4">4 Days / 3 Nights - Tiger Hill Sunrise, Tea Gardens & Toy Train.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-emerald-700 font-bold text-lg">₹9,800 / person</span>
+                        <button onclick="openItineraryModal('Darjeeling Retreat')" class="text-xs bg-slate-800 text-white px-3 py-2 rounded">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summer Special -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 hover:shadow-lg transition">
+                <div class="bg-blue-600 text-white font-bold text-xs uppercase px-3 py-1 inline-block m-3 rounded">Summer Vacation</div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold mb-2">Dooars Wildlife & Jungle Safari</h3>
+                    <p class="text-slate-600 text-sm mb-4">3 Days / 2 Nights - Lataguri, Jaldapara, Chilapata Elephant Safari.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-emerald-700 font-bold text-lg">₹7,200 / person</span>
+                        <button onclick="openItineraryModal('Dooars Safari')" class="text-xs bg-slate-800 text-white px-3 py-2 rounded">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tour Price Calculator -->
+    <section id="calculator" class="py-16 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 bg-white p-8 rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold text-slate-900 mb-2 text-center">Interactive Tour Price Estimator</h2>
+            <p class="text-slate-600 text-center mb-6 text-sm">Calculate instant estimated cost for custom itineraries across Eastern Himalayas.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Destination</label>
+                    <select id="calcDest" class="w-full p-2.5 bg-slate-50 border rounded-lg text-sm">
+                        <option value="sikkim">Gangtok & North Sikkim</option>
+                        <option value="darjeeling">Darjeeling & Kalimpong</option>
+                        <option value="dooars">Dooars Jungle Circuit</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Number of Days</label>
+                    <input type="number" id="calcDays" value="5" min="2" max="15" class="w-full p-2.5 bg-slate-50 border rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Number of Travelers</label>
+                    <input type="number" id="calcPeople" value="4" min="1" max="25" class="w-full p-2.5 bg-slate-50 border rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Vehicle Preference</label>
+                    <select id="calcVehicle" class="w-full p-2.5 bg-slate-50 border rounded-lg text-sm">
+                        <option value="innova">Innova / Xylo (Luxury SUV)</option>
+                        <option value="dzire">Dzire / Etios (Sedan)</option>
+                        <option value="tempo">Tempo Traveller (Group)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="calculateFare()" class="w-full bg-emerald-600 text-white font-bold py-3 mt-6 rounded-lg hover:bg-emerald-700 transition">
+                Calculate Estimated Fare
+            </button>
+
+            <div id="calcResult" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-center">
+                <span class="text-xs uppercase text-emerald-600 font-bold">Estimated Total Fare</span>
+                <div class="text-3xl font-extrabold text-emerald-800 my-1" id="totalPrice">₹0</div>
+                <p class="text-xs text-slate-500 mb-3">*Includes vehicle fuel, driver allowance, and standard accommodations.</p>
+                <a id="calcWhatsappBtn" href="#" target="_blank" class="inline-block bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded shadow">
+                    Lock Quote via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Fleet Rental -->
+    <section id="fleet" class="py-16 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900">Vehicle Fleet & Taxi Rentals</h2>
+            <p class="text-slate-600">Reliable mountain-certified vehicles with experienced hill drivers.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-5 rounded-xl border shadow-sm">
+                <i class="fa-solid fa-car text-3xl text-emerald-600 mb-3"></i>
+                <h3 class="text-lg font-bold">Innova Crysta / Xylo</h3>
+                <p class="text-xs text-slate-500 mb-2">Ideal for Sikkim steep terrains & families.</p>
+                <span class="text-sm font-bold text-slate-800">Capacity: 6+1 Seats</span>
+            </div>
+            <div class="bg-white p-5 rounded-xl border shadow-sm">
+                <i class="fa-solid fa-car-side text-3xl text-emerald-600 mb-3"></i>
+                <h3 class="text-lg font-bold">Swift Dzire / Etios</h3>
+                <p class="text-xs text-slate-500 mb-2">Best for couples & budget Darjeeling tours.</p>
+                <span class="text-sm font-bold text-slate-800">Capacity: 4+1 Seats</span>
+            </div>
+            <div class="bg-white p-5 rounded-xl border shadow-sm">
+                <i class="fa-solid fa-van-shuttle text-3xl text-emerald-600 mb-3"></i>
+                <h3 class="text-lg font-bold">Tempo Traveller</h3>
+                <p class="text-xs text-slate-500 mb-2">Perfect for large family & corporate groups.</p>
+                <span class="text-sm font-bold text-slate-800">Capacity: 13-26 Seats</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Widget -->
+    <section id="weather" class="py-12 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8">Live Mountain Weather Forecast</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold">Gangtok</h4>
+                    <p class="text-2xl font-extrabold text-amber-400 my-1">16°C</p>
+                    <p class="text-xs text-slate-400">Clear Skies</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold">Darjeeling</h4>
+                    <p class="text-2xl font-extrabold text-amber-400 my-1">13°C</p>
+                    <p class="text-xs text-slate-400">Mist / Mild Fog</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold">Pelling</h4>
+                    <p class="text-2xl font-extrabold text-amber-400 my-1">15°C</p>
+                    <p class="text-xs text-slate-400">Partly Cloudy</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold">Alipurduar</h4>
+                    <p class="text-2xl font-extrabold text-amber-400 my-1">28°C</p>
+                    <p class="text-xs text-slate-400">Pleasant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="py-16 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900">Customer Ratings & Reviews</h2>
+            <div class="text-amber-500 my-2">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span class="text-slate-700 font-bold ml-2">4.9 / 5 (120+ Ratings)</span>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-xl border shadow-sm">
+                <p class="text-slate-600 text-sm italic mb-4">"Excellent service by Nilam Tours for our North Sikkim trip. Driver Subrata was very polite and skilled on mountain roads."</p>
+                <div class="font-bold text-sm text-slate-900">- Rahul Mukherjee, Kolkata</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border shadow-sm">
+                <p class="text-slate-600 text-sm italic mb-4">"Booked Innova for Dooars Jungle safari. Seamless permit arrangements and smooth hotel check-ins."</p>
+                <div class="font-bold text-sm text-slate-900">- Ananya Sharma, Siliguri</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
+        <p class="mb-2">Nilam Tours & Travels | Alipurduar, West Bengal | Contact: +91 9547171871 | subratasharma101@gmail.com</p>
+        <p>&copy; 2026 Nilam Tours & Travels. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Admin Console Modal -->
+    <div id="adminModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md p-6 rounded-2xl shadow-2xl">
+            <h3 class="text-xl font-bold mb-4 text-slate-900">Admin Console Login</h3>
+            <input type="password" id="adminPass" placeholder="Enter Password (default: admin123)" class="w-full p-3 border rounded-lg mb-4 text-sm">
+            <div class="flex justify-end gap-2">
+                <button onclick="closeAdminModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded text-xs font-semibold">Cancel</button>
+                <button onclick="loginAdmin()" class="px-4 py-2 bg-emerald-600 text-white rounded text-xs font-semibold">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting -->
+    <script>
+        // Language Switcher Dictionary
+        const translations = {
+            en: {
+                home: "Home",
+                festive: "Festive Packages",
+                packages: "Tours",
+                calc: "Price Calculator",
+                fleet: "Car Fleet",
+                weather: "Weather",
+                reviews: "Reviews",
+                heroTitle: "Explore Sikkim, Darjeeling & Dooars",
+                heroSub: "Customized tour packages, luxury & budget car rentals, local hill permits, and memorable mountain journeys."
+            },
+            bn: {
+                home: "হোম",
+                festive: "উৎসব প্যাকেজ",
+                packages: "ট্যুর",
+                calc: "ভাড়া ক্যালকুলেটর",
+                fleet: "গাড়ি ভাড়ার তালিকা",
+                weather: "আবহাওয়া",
+                reviews: "রিভিউ",
+                heroTitle: "সিকিম, দার্জিলিং ও ডুয়ার্স ভ্রমণ করুন",
+                heroSub: "পাহাড়ি অভিজ্ঞ চালক, বাজেট ও লাক্সারি গাড়ি এবং সহজ পারমিট সুবিধার সাথে নির্ভরযোগ্য ভ্রমণ।"
+            },
+            hi: {
+                home: "होम",
+                festive: "त्योहार पैकेज",
+                packages: "टूर",
+                calc: "किराया कैलकुलेटर",
+                fleet: "गाड़ी किराया",
+                weather: "मौसम",
+                reviews: "समीक्षाएं",
+                heroTitle: "सिक्किम, दार्जिलिंग और डुआर्स की यात्रा करें",
+                heroSub: "किफायती पैकेज, पहाड़ी ड्राइवर के साथ सुरक्षित और आरामदायक टूर।"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            if(!t) return;
+            document.getElementById('nav-home').innerText = t.home;
+            document.getElementById('nav-festive').innerText = t.festive;
+            document.getElementById('nav-packages').innerText = t.packages;
+            document.getElementById('nav-calc').innerText = t.calc;
+            document.getElementById('nav-fleet').innerText = t.fleet;
+            document.getElementById('nav-weather').innerText = t.weather;
+            document.getElementById('nav-reviews').innerText = t.reviews;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-subtitle').innerText = t.heroSub;
+        }
+
+        // Fare Calculation Function
+        function calculateFare() {
+            const dest = document.getElementById('calcDest').value;
+            const days = parseInt(document.getElementById('calcDays').value) || 1;
+            const people = parseInt(document.getElementById('calcPeople').value) || 1;
+            const vehicle = document.getElementById('calcVehicle').value;
+
+            let baseDailyRate = 3500;
+            if (vehicle === 'innova') baseDailyRate = 4500;
+            if (vehicle === 'tempo') baseDailyRate = 6500;
+
+            const total = (baseDailyRate * days) + (people * 800 * days);
+            document.getElementById('totalPrice').innerText = '₹' + total.toLocaleString('en-IN');
+            document.getElementById('calcResult').classList.remove('hidden');
+
+            const msg = `Hello Nilam Tours, I calculated a tour quote for ${dest.toUpperCase()} (${days} days, ${people} persons, Vehicle: ${vehicle.toUpperCase()}). Estimated Fare: ₹${total}. Please confirm booking details.`;
+            document.getElementById('calcWhatsappBtn').href = `https://wa.me/919547171871?text=${encodeURIComponent(msg)}`;
+        }
+
+        // Admin Modal Controls
+        function openAdminModal() { document.getElementById('adminModal').classList.remove('hidden'); }
+        function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); }
+        function loginAdmin() {
+            const pass = document.getElementById('adminPass').value;
+            if(pass === 'admin123') {
+                alert('Welcome Admin! You have logged into Nilam Tours Control Panel.');
+                closeAdminModal();
+            } else {
+                alert('Incorrect Master Password! Default is admin123');
+            }
+        }
+
+        function openItineraryModal(title) {
+            alert(`Opening Day-by-day Itinerary details for: ${title}`);
+        }
+    </script>
+</body>
+</html>
